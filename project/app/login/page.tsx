@@ -11,18 +11,22 @@ export default function LoginPage() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const username = formData.get('username') as string;
-    const password = formData.get('password') as string;
-    
-    const user = await authenticateUser(username, password); // Added await
-    
-    if (user) {
-      const redirectPath = getInitialRedirectPath(user.role);
-      console.log('Redirecting to:', redirectPath); // Debug log
-      router.push(redirectPath);
-    } else {
-      setError("Invalid credentials");
+    try {
+      const formData = new FormData(e.currentTarget);
+      const username = formData.get('username') as string;
+      const password = formData.get('password') as string;
+      
+      const user = await authenticateUser(username, password);
+      
+      if (user) {
+        const redirectPath = getInitialRedirectPath(user.role);
+        await router.push(redirectPath);
+      } else {
+        setError("Invalid credentials");
+      }
+    } catch (err) {
+      console.error(err);
+      setError("An error occurred during login");
     }
   };
 
