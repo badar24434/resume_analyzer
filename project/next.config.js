@@ -5,6 +5,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: { unoptimized: true },
+  basePath: '/resume_analyzer'
 };
 
 module.exports = nextConfig;
