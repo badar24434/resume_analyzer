@@ -23,11 +23,12 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { JobDescription } from "@/lib/types";
 
 export default function JobDescriptionsPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [showJobForm, setShowJobForm] = useState(false);
-  const [editingJob, setEditingJob] = useState(null);
+  const [editingJob, setEditingJob] = useState<JobDescription | null>(null);
   const [departmentFilter, setDepartmentFilter] = useState("all");
 
   const filteredJobs = jobDescriptions.filter(job => {
