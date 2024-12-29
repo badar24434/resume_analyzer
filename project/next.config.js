@@ -5,9 +5,8 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: { unoptimized: true },
-  basePath: '',
-  assetPrefix: '',
   trailingSlash: true
+  // Removed basePath and assetPrefix
 };
 
 module.exports = nextConfig;

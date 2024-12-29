@@ -15,7 +15,7 @@ export default function LoginPage() {
     const username = formData.get('username') as string;
     const password = formData.get('password') as string;
     
-    const user = authenticateUser(username, password);
+    const user = await authenticateUser(username, password); // Added await
     
     if (user) {
       const redirectPath = getInitialRedirectPath(user.role);
