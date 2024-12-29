@@ -32,7 +32,7 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
-      <LoginForm onSubmit={handleSubmit} error={error} />
+      <LoginForm onSubmit={handleSubmit} formError={error} />
     </div>
   );
 }

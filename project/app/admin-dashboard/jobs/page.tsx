@@ -28,7 +28,7 @@ import { JobDescription } from "@/lib/types";
 export default function JobDescriptionsPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [showJobForm, setShowJobForm] = useState(false);
-  const [editingJob, setEditingJob] = useState<JobDescription | null>(null);
+  const [editingJob, setEditingJob] = useState<JobDescription | undefined>(undefined);
   const [departmentFilter, setDepartmentFilter] = useState("all");
 
   const filteredJobs = jobDescriptions.filter(job => {
@@ -142,7 +142,7 @@ export default function JobDescriptionsPage() {
         open={showJobForm}
         onClose={() => {
           setShowJobForm(false);
-          setEditingJob(null);
+          setEditingJob(undefined);
         }}
         onSubmit={(jobData) => {
           console.log('Job data:', jobData);

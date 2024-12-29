@@ -8,15 +8,19 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { authenticateUser } from "@/lib/auth";
 
-export function LoginForm() {
+interface LoginFormProps {
+  onSubmit: (e: React.FormEvent<HTMLFormElement>) => Promise<void>;
+  formError?: string;
+}
+export function LoginForm({ onSubmit, formError }: LoginFormProps) {
   const router = useRouter();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setError("");
     setLoading(true);
+    await onSubmit(e);
+    setLoading(false);
 
     const formData = new FormData(e.currentTarget);
     const username = formData.get("username") as string;
