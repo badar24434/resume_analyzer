@@ -5,8 +5,8 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: { unoptimized: true },
-  basePath: '/resume_analyzer',
-  assetPrefix: '/resume_analyzer/',
+  basePath: '',
+  assetPrefix: '',
   trailingSlash: true
 };
 
