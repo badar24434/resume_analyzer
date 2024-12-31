@@ -123,7 +123,7 @@ export default function MessagesPage() {
           </CardContent>
           <div className="border-t p-4 flex items-center gap-4">
             <Input placeholder="Type a message..." className="flex-1" />
-            <Button variant="primary">
+            <Button variant="default">
               <Send className="w-4 h-4" />
             </Button>
           </div>

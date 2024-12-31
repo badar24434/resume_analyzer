@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Resume, FeedbackType, DecisionType } from "@/lib/types";
+import { Resume, FeedbackType, DecisionType, FeedbackDialogProps } from "@/lib/types";
 import { Check, X, Clock } from "lucide-react";
 
 export function FeedbackDialog({ resume, open, onClose, onSubmit }: FeedbackDialogProps) {

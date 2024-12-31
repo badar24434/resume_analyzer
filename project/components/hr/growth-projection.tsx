@@ -33,21 +33,21 @@ export function GrowthProjection({ resume }: GrowthProjectionProps) {
   const projectedData = [
     {
       year: currentYear,
-      leadership: getStartValue(resume.growthPotential.leadership),
-      technical: getStartValue(resume.growthPotential.technical),
-      communication: getStartValue(resume.growthPotential.communication),
+      leadership: getStartValue(resume.growthPotential?.leadership ?? 0),
+      technical: getStartValue(resume.growthPotential?.technical ?? 0),
+      communication: getStartValue(resume.growthPotential?.communication ?? 0),
     },
     {
       year: currentYear + Math.floor(yearDiff/2), // Midpoint year
-      leadership: Math.round(getStartValue(resume.growthPotential.leadership) * 1.15),
-      technical: Math.round(getStartValue(resume.growthPotential.technical) * 1.17),
-      communication: Math.round(getStartValue(resume.growthPotential.communication) * 1.13),
+      leadership: Math.round(getStartValue(resume.growthPotential?.leadership ?? 0) * 1.15),
+      technical: Math.round(getStartValue(resume.growthPotential?.technical ?? 0) * 1.17),
+      communication: Math.round(getStartValue(resume.growthPotential?.communication ?? 0) * 1.13),
     },
     {
       year: targetYear,
-      leadership: resume.growthPotential.leadership, // Target values
-      technical: resume.growthPotential.technical,
-      communication: resume.growthPotential.communication,
+      leadership: resume.growthPotential?.leadership ?? 0, // Target values
+      technical: resume.growthPotential?.technical ?? 0,
+      communication: resume.growthPotential?.communication ?? 0,
     },
   ];
 

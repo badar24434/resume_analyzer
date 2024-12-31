@@ -61,7 +61,7 @@ export default function ApplicationForm() {
             </div>
             <div className="flex flex-wrap gap-2 mt-4">
               <Badge variant="secondary">{jobDetails.type}</Badge>
-              <Badge variant="success" className="bg-green-100 text-green-800">
+              <Badge variant="secondary" className="bg-green-100 text-green-800">
                 {jobDetails.match}% Match
               </Badge>
               <Badge variant="outline">Posted {jobDetails.posted}</Badge>

@@ -20,7 +20,7 @@ export function PositionFilter({ selectedDepartment, onPositionChange }: Positio
     : departments.find(d => d.name === selectedDepartment)?.positions || [];
 
   // Remove duplicates
-  const uniquePositions = [...new Set(positions)];
+  const uniquePositions = Array.from(new Set(positions));
 
   return (
     <Select onValueChange={onPositionChange}>
